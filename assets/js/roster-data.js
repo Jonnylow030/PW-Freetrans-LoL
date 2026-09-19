@@ -33,5 +33,5 @@ const ROSTER = [
   { name: "Philbert", class: "Magier", spec: "DPS", photo: "assets/img/players/philbert.jpg", armoryUrl: null, logsUrl: null },
   { name: "Timo", class: "Magier", spec: "DPS", photo: "assets/img/players/timo.jpg", armoryUrl: null, logsUrl: null },
   { name: "Karl", class: "Druide", spec: "Hybrid", photo: "assets/img/players/karl.jpg", armoryUrl: null, logsUrl: null },
-  { name: "Francis", class: "Noch nicht entschieden", spec: "Heal", photo: "assets/img/players/francis.jpg", armoryUrl: null, logsUrl: null }
+  { name: "Francis", class: "Magier", spec: "DPS", photo: "assets/img/players/francis.jpg", armoryUrl: null, logsUrl: null }
 ];

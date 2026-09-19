@@ -111,8 +111,13 @@ function renderAccordion() {
     const color = CLASS_COLORS[cls];
     const count = counts[cls];
     const players = ROSTER.filter((p) => p.class === cls);
-    const playersHtml = players.length ? players.map(renderPlayerCard).join("") : renderRecruitCard(cls);
-    return renderClassBar(cls, cls, color, count, playersHtml);
+    const isUndecided = cls === "Noch nicht entschieden";
+    const playersHtml = players.length
+      ? players.map(renderPlayerCard).join("")
+      : isUndecided
+        ? `<p class="roster-empty">Aktuell ist bei niemandem die Klasse offen.</p>`
+        : renderRecruitCard(cls);
+    return renderClassBar(cls, cls, color, count, playersHtml, isUndecided ? "0 Spieler" : undefined);
   }).join("");
 
   const roleHeading = `<div class="accordion-divider">Nach Rolle filtern</div>`;
