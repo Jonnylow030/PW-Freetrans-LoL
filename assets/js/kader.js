@@ -135,6 +135,60 @@ function renderAccordion() {
   wrap.innerHTML = allBar + classBars + roleHeading + roleBars;
 }
 
+function renderRoleChart() {
+  const card = document.getElementById("roleChartCard");
+  if (!card) return;
+
+  const segments = ROLE_FILTERS
+    .filter(({ key }) => key !== "TBD")
+    .map(({ key, label, color }) => ({
+      label,
+      color,
+      count: ROSTER.filter((p) => p.spec === key).length
+    }))
+    .filter((s) => s.count > 0);
+
+  const total = segments.reduce((sum, s) => sum + s.count, 0);
+  if (total === 0) {
+    card.style.display = "none";
+    return;
+  }
+
+  const r = 45;
+  const circumference = 2 * Math.PI * r;
+  let offset = 0;
+
+  const arcs = segments.map((s) => {
+    const length = (s.count / total) * circumference;
+    const dasharray = `${length} ${circumference - length}`;
+    const dashoffset = -offset;
+    offset += length;
+    return `<circle cx="60" cy="60" r="${r}" fill="none" stroke="${s.color}"
+      stroke-width="16" stroke-dasharray="${dasharray}" stroke-dashoffset="${dashoffset}"
+      transform="rotate(-90 60 60)"><title>${s.label}: ${s.count}</title></circle>`;
+  }).join("");
+
+  const legend = segments.map((s) => `
+    <div class="role-legend-item">
+      <span class="role-legend-dot" style="background:${s.color};"></span>
+      <span class="role-legend-label">${s.label}</span>
+      <span class="role-legend-count">${s.count}</span>
+    </div>
+  `).join("");
+
+  card.innerHTML = `
+    <h3 class="role-chart-title">Rollen-Verteilung</h3>
+    <div class="role-chart-body">
+      <svg class="role-donut" viewBox="0 0 120 120" role="img" aria-label="Verteilung der Rollen im Kader">
+        ${arcs}
+        <text x="60" y="56" text-anchor="middle" class="role-donut-total">${total}</text>
+        <text x="60" y="72" text-anchor="middle" class="role-donut-sub">Spieler</text>
+      </svg>
+      <div class="role-legend">${legend}</div>
+    </div>
+  `;
+}
+
 function openProfile(name) {
   const player = ROSTER.find((p) => p.name === name);
   if (!player) return;
@@ -167,6 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!wrap) return;
 
   renderAccordion();
+  renderRoleChart();
 
   wrap.addEventListener("click", (e) => {
     const card = e.target.closest(".player-card[data-player]");
