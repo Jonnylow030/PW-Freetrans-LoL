@@ -968,6 +968,100 @@ nav.main-nav {
   line-height: 1.5;
 }
 
+/* Dungeon table */
+.table-wrap {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow-x: auto;
+}
+
+.dungeon-table { width: 100%; border-collapse: collapse; }
+
+.dungeon-table th {
+  background: var(--panel-2);
+  color: var(--text-dim);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 700;
+}
+
+.dungeon-table td {
+  padding: 12px 16px;
+  font-size: 13.5px;
+  border-top: 1px solid var(--border);
+}
+
+.dungeon-table td.level { color: var(--gold-light); font-weight: 700; white-space: nowrap; }
+
+/* Item tooltip card */
+.item-tooltip {
+  max-width: 360px;
+  margin: 0 auto 28px;
+  background: #0b0d1a;
+  border: 1px solid #3a3f6b;
+  border-radius: 6px;
+  padding: 14px 16px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.item-tooltip .it-name { color: #4fd1ff; font-weight: 700; font-size: 14.5px; }
+.item-tooltip .it-stat { color: #fff; }
+.item-tooltip .it-unique { color: #fff; }
+.item-tooltip .it-use { color: #3ecf6e; }
+.item-tooltip .it-flavor { color: #ffd166; font-style: italic; margin-top: 4px; display: block; }
+.item-tooltip .it-price { color: #fff; margin-top: 4px; display: block; }
+
+/* Quest steps */
+.quest-step-card {
+  max-width: 700px;
+  margin: 0 auto 16px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+}
+
+.quest-step-card h3 { margin: 0 0 4px; color: var(--gold-light); font-size: 16px; }
+.quest-step-card .qs-sub { margin: 0 0 14px; font-size: 12px; color: var(--text-faint); }
+
+.qs-table { width: 100%; border-collapse: collapse; }
+.qs-table th {
+  text-align: left;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-faint);
+  padding: 0 0 6px;
+  border-bottom: 1px solid var(--border);
+}
+.qs-table td {
+  padding: 8px 0;
+  font-size: 13px;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.qs-table td:first-child { color: var(--text); font-weight: 700; white-space: nowrap; padding-right: 14px; }
+.qs-table tr:last-child td { border-bottom: none; }
+
+.qs-note {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  background: var(--panel-2);
+  border-left: 3px solid var(--gold);
+  border-radius: 6px;
+  font-size: 12.5px;
+  font-style: italic;
+  color: var(--text-dim);
+}
+
 /* About page */
 .about-wrap {
   max-width: 700px;
