@@ -210,6 +210,8 @@ nav.main-nav {
   min-width: 160px;
 }
 
+.hero-mobile-only { display: none; }
+
 .big-btn.primary {
   background: linear-gradient(135deg, var(--green-deep), var(--green));
   color: #08150e;
@@ -1239,6 +1241,7 @@ footer.site-footer {
   .menu-close-text:hover { color: var(--gold-light); }
 
   .big-btn { min-width: 0; width: 100%; }
+  .hero-mobile-only { display: inline-flex; }
   .hero { padding: 28px 0 20px; }
   .hero img.hero-logo { width: min(560px, 92vw); margin-left: auto; margin-right: auto; }
   .countdown-wrap { max-width: 620px; }
