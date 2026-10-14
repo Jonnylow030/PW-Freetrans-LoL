@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Addon: Klassenerfolge — PW Freetrans LoL</title>
+<meta name="description" content="Das PW Freetrans LoL Addon für World of Warcraft Forever: Klassenerfolge, Punkte, Ränge und Klassenmeister. Jetzt herunterladen.">
+<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=28">
+<link rel="stylesheet" href="assets/css/addon.css?v=1">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo.jpg" alt="PW Freetrans LoL Logo">
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false">
+      <span class="menu-icon">☰</span>
+    </button>
+    <nav class="main-nav" id="mainNav">
+      <a class="nav-btn" href="index.html">Startseite</a>
+      <a class="nav-btn" href="kader.html">Unser Kader</a>
+      <a class="nav-btn" href="bewerbung.html">Bewerbung</a>
+      <a class="nav-btn" href="ueber-uns.html">Über uns</a>
+      <a class="nav-btn" href="gameplay.html">Gameplay Infos</a>
+      <a class="nav-btn active" href="addon.html">Addon</a>
+      <a class="nav-btn" href="https://discord.gg/qhAk6rtSe" target="_blank" rel="noopener noreferrer">Zum Discord</a>
+      <a class="nav-btn" href="https://www.wowhead.com/forever/de/talent-calc/druid" target="_blank" rel="noopener noreferrer">Talentrechner</a>
+      <button class="menu-close-text" id="menuCloseText">Menü schließen</button>
+    </nav>
+  </div>
+</header>
+
+<main class="addon-page">
+<div class="addon-wrap">
+
+  <!-- ===================== HERO ===================== -->
+  <header class="addon-hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Addon für World of Warcraft: Forever</p>
+      <h1><span>PW Freetrans LoL</span>Klassenerfolge</h1>
+      <p class="lede">Jede Klasse hat ihre eigenen Erfolge. Wer sie schafft, sammelt Klassenpunkte, steigt durch 16 Ränge auf und kann Klassenmeister der Gilde werden. Das Addon zählt alles automatisch mit, während du spielst.</p>
+      <div class="facts" id="facts"></div>
+      <a class="addon-dl-btn" href="assets/downloads/PWFreetrans.zip" download>
+        <span class="dl-icon" aria-hidden="true">&#8681;</span> Addon herunterladen (.zip)
+      </a>
+      <p class="addon-dl-note">Aktuelle Version 0.2 &middot; Installationsanleitung weiter unten</p>
+    </div>
+    <div>
+      <div class="wow" id="mock">
+        <div class="wow-title"><span><b>PW Freetrans LoL</b> - Klassenerfolge</span><span class="wow-x" aria-hidden="true">x</span></div>
+        <div class="wow-tabs" role="tablist" id="mockTabs"></div>
+        <div class="wow-body" id="mockBody"></div>
+      </div>
+      <p class="badge-demo" style="margin-top:8px">Vorschau mit Beispieldaten (Schamane, Stufe 34). Die Tabs sind klickbar.</p>
+    </div>
+  </header>
+
+  <!-- ===================== ABLAUF ===================== -->
+  <section>
+    <div class="section-head">
+      <p class="eyebrow">So funktioniert es</p>
+      <h2>Vom ersten Erfolg zum Klassenmeister</h2>
+    </div>
+    <div class="flow">
+      <div class="step"><h3>Spielen</h3><p>Leveln, Dungeons, Berufe, Duelle, Gildenruns. Das Addon erkennt Fortschritt selbst, du musst nichts eintragen.</p></div>
+      <div class="step"><h3>Erfolge</h3><p>Jeder erreichte Meilenstein ist ein Erfolg mit festen Punkten. Eine Einblendung zeigt sofort, was du geschafft hast.</p></div>
+      <div class="step"><h3>Rang</h3><p>Deine Klassenpunkte addieren sich. Ab bestimmten Punktzahlen bekommst du den nächsten Rang, von 0 bis 15.</p></div>
+      <div class="step"><h3>Klassenmeister</h3><p>Wer in seiner Klasse die meisten Punkte der Gilde hat, ist Klassenmeister. Die Punkte werden unsichtbar über den Gildenkanal geteilt.</p></div>
+    </div>
+  </section>
+
+  <!-- ===================== WEITERE ANSICHTEN ===================== -->
+  <section>
+    <div class="section-head">
+      <p class="eyebrow">Im Spiel</p>
+      <h2>Was du unterwegs siehst</h2>
+      <p class="lede">Neben dem Hauptfenster meldet sich das Addon nur, wenn etwas passiert.</p>
+    </div>
+    <div class="extras">
+      <div class="extra">
+        <div class="toast"><div class="ico" style="background:linear-gradient(135deg,#8a5a1a,#3d2408)">TD</div>
+          <div><small>PW Freetrans - Erfolg errungen!</small><b style="font-weight:500;color:#fff">Todesminen mit Schamane</b><br><span class="gold">+18 Klassenpunkte</span></div></div>
+        <h3>Erfolgs-Einblendung</h3>
+        <p>Erscheint oben in der Bildschirmmitte, mit Ton. Mehrere Erfolge werden nacheinander gezeigt.</p>
+      </div>
+      <div class="extra">
+        <div class="tip"><span class="t1">PW Freetrans LoL</span><span>612 Klassenpunkte - Rang 5: Sackfalte</span><span style="color:#b3b3b3">Klicken: Gildenfenster öffnen</span><span style="color:#b3b3b3">Ziehen: Knopf verschieben</span></div>
+        <h3>Minimap-Knopf</h3>
+        <p>Zeigt deine Punkte und deinen Rang beim Drüberfahren. Ein Klick öffnet das Fenster, alternativ <code>/pwf</code>.</p>
+      </div>
+      <div class="extra">
+        <div class="chat">
+          <span><span class="tag">[PW Freetrans]</span> Stufe ohne Tod! Serie: <span class="gold">10</span> Stufen, <span class="done">+8 Punkte</span></span>
+          <span><span class="tag">[PW Freetrans]</span> Gildenrun abgeschlossen (3 Gildenmitglieder)</span>
+          <span><span class="tag">[PW Freetrans]</span> Duell gegen Bob gewonnen - zählt erst wieder in 42 Min.</span>
+        </div>
+        <h3>Chat-Meldungen</h3>
+        <p>Kurze Hinweise im Chat erklären, was gezählt hat und was nicht. Auf Wunsch kündigt <code>/pwf ansage</code> Erfolge im Gildenchat an.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RÄNGE ===================== -->
+  <section id="raenge">
+    <div class="section-head">
+      <p class="eyebrow">Alle 16 Titel</p>
+      <h2>Die Ränge</h2>
+      <p class="lede">Die Farbe zeigt die Stufe, angelehnt an die Gegenstandsqualität im Spiel: von grau bis legendär.</p>
+    </div>
+    <div class="scale">
+      <h3>Wo landet wer?</h3>
+      <p>Geschätzte Punkte auf Stufe 60. Die oberen Ränge erreicht man praktisch nur, wenn man nie stirbt.</p>
+      <div class="track" id="track"></div>
+      <div class="track-labels"><span>0</span><span>2.000</span><span>4.000</span><span>6.000</span><span>8.000 Punkte</span></div>
+    </div>
+    <div class="ladder" id="ladder"></div>
+    <div class="master-card">
+      <svg class="crown" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 36 L10 14 L19 25 L24 9 L29 25 L38 14 L42 36 Z" fill="#ffd100" stroke="#7a5a00" stroke-width="2" stroke-linejoin="round"/><rect x="6" y="37" width="36" height="5" rx="1.5" fill="#c9a000"/></svg>
+      <div><h3 style="color:var(--ap-gold)">Klassenmeister</h3><p style="color:var(--ap-muted)">Kein Rang, sondern ein Titel pro Klasse: Wer in seiner Klasse die meisten Klassenpunkte aller Gildenmitglieder hat, ist Klassenmeister. Bei Gleichstand gewinnt, wer die Punktzahl zuerst erreicht hat.</p></div>
+    </div>
+  </section>
+
+  <!-- ===================== ERFOLGSWEGE ===================== -->
+  <section id="erfolge">
+    <div class="section-head">
+      <p class="eyebrow">Alle Erfolgswege</p>
+      <h2>Womit du Punkte sammelst</h2>
+      <p class="lede">Jede Kategorie hat mehrere Stufen. Höhere Stufen bringen mehr Punkte, aber pro Einheit weniger. So lohnt sich Abwechslung mehr als stures Farmen.</p>
+    </div>
+    <div class="paths" id="paths"></div>
+  </section>
+
+  <!-- ===================== FAIRNESS ===================== -->
+  <section>
+    <div class="section-head">
+      <p class="eyebrow">Fair Play</p>
+      <h2>Was nicht zählt</h2>
+      <p class="lede">Damit niemand Punkte erschleicht, gelten ein paar Regeln. Das Addon erklärt im Chat, wenn etwas deshalb nicht gezählt hat.</p>
+    </div>
+    <div class="fair">
+      <div><b>Gold hin- und herschieben</b><p>Gold aus Handel, Post von Spielern und Gildenbank-Abhebungen zählt nicht als verdient. Auktionshaus-Erlöse zählen.</p></div>
+      <div><b>Überlevelte Dungeons</b><p>Ein Dungeon zählt nur, wenn du höchstens 5 Stufen über seiner Max-Stufe bist. Gildenruns zählen trotzdem.</p></div>
+      <div><b>Geschenkte Duelle</b><p>Nur echte Siege. Pro Gegner einmal pro Stunde, gegen Gildenmitglieder einmal pro Tag, Gegner höchstens 5 Stufen unter dir.</p></div>
+      <div><b>Berufe tauschen</b><p>Nur die ersten zwei Hauptberufe zählen, dazu Kochkunst, Angeln und Erste Hilfe.</p></div>
+      <div><b>Ohne Addon spielen</b><p>Wer ohne Addon eine Stufe aufsteigt, verliert seine Serie ohne Tod und den legendären Bonus.</p></div>
+      <div><b>Leichte Gruppenquests</b><p>Gruppenquests zählen nur, wenn du nie in einer Gruppe warst und die Quest höchstens 3 Stufen unter dir liegt.</p></div>
+    </div>
+  </section>
+
+  <!-- ===================== START ===================== -->
+  <section>
+    <div class="section-head">
+      <p class="eyebrow">Loslegen</p>
+      <h2>Installation und Befehle</h2>
+    </div>
+    <div class="addon-dl-box">
+      <h3>Addon herunterladen</h3>
+      <p>Lade den Addon-Ordner als ZIP herunter und entpacke ihn wie unten beschrieben.</p>
+      <a class="addon-dl-btn" href="assets/downloads/PWFreetrans.zip" download>
+        <span class="dl-icon" aria-hidden="true">&#8681;</span> PWFreetrans.zip herunterladen
+      </a>
+      <p class="addon-dl-note">Version 0.2</p>
+    </div>
+    <div class="start">
+      <ol>
+        <li>Den Ordner <code>PWFreetrans</code> nach <code>World of Warcraft\_classic_beta_\Interface\AddOns\</code> kopieren.</li>
+        <li>Im Charakterauswahl-Bildschirm unter <b>AddOns</b> aktivieren. Steht dort „veraltet", den Haken bei „Veraltete AddOns laden" setzen.</li>
+        <li>Für „Ohne Tod" ab Stufe 1 mit Addon spielen.</li>
+        <li>Alle in der Gilde brauchen dieselbe Version, damit Rangliste und Klassenmeister stimmen.</li>
+        <li>Das Addon funktioniert in jeder Gilde und auch ohne Gilde. Ohne Gilde zählen Erfolge und Punkte, nur die Rangliste fehlt.</li>
+      </ol>
+      <div class="tbl-wrap">
+        <table class="cmds">
+          <thead><tr><th>Befehl</th><th>Was passiert</th></tr></thead>
+          <tbody>
+            <tr><td><code>/pwf</code></td><td>Fenster öffnen oder schließen</td></tr>
+            <tr><td><code>/pwf sync</code></td><td>Punkte aller Gildenmitglieder neu anfragen</td></tr>
+            <tr><td><code>/pwf ansage</code></td><td>Erfolge im Gildenchat ankündigen (an/aus)</td></tr>
+            <tr><td><code>/pwf minimap</code></td><td>Minimap-Knopf ein- oder ausblenden</td></tr>
+            <tr><td><code>/pwf debug</code></td><td>Boss-Tode in Dungeons protokollieren</td></tr>
+            <tr><td><code>/pwf log</code></td><td>Protokoll anzeigen (z. B. Endbosse neuer Dungeons)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer>PW Freetrans LoL · Addon-Version 0.2 · Alle Zahlen stammen aus der aktuellen Erfolgsliste des Addons. Die Spielerwerte in den Vorschaubildern sind Beispiele.</footer>
+</div>
+</main>
+
+<footer class="site-footer">
+  &copy; 2026 PW Freetrans LoL
+</footer>
+
+<script src="assets/js/nav.js?v=28"></script>
+<script src="assets/js/addon.js?v=1"></script>
+</body>
+</html>
