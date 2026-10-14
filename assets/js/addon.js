@@ -50,13 +50,22 @@ document.getElementById("facts").innerHTML = [
 ].map(([b, s]) => `<div class="fact"><b class="num">${b}</b><small>${s}</small></div>`).join("");
 
 /* ---------- Ränge ---------- */
+const PRIZES = {
+  10: "20 € PayPal",
+  11: "30 € PayPal",
+  12: "50 € PayPal",
+  13: "Pokémon-Karte (Wert 100 €)",
+  14: "Pokémon-Karte (Wert 150 €)",
+  15: "50 € Cash + Pokémon-Karte (Wert 150 €)",
+};
 const maxPts = DATA.ranks[DATA.ranks.length - 1].pts;
 document.getElementById("ladder").innerHTML = DATA.ranks.slice().reverse().map(r => {
   const t = tierOf(r.rank);
   const w = Math.max(2, (r.pts / maxPts) * 100);
+  const prize = PRIZES[r.rank] ? `<span class="prize-badge">🏆 ${esc(PRIZES[r.rank])}</span>` : "";
   return `<div class="rung" style="--q:var(${t.q})">
     <span class="rn num">${r.rank}</span>
-    <span class="nm">${esc(r.name)}<span class="tier">${t.tier}</span></span>
+    <span class="nm">${esc(r.name)}<span class="tier">${t.tier}</span>${prize}</span>
     <span class="fill" aria-hidden="true"><i style="width:${w}%"></i></span>
     <span class="pt num">${fmt(r.pts)}<small>Punkte</small></span></div>`;
 }).join("");

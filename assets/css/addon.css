@@ -135,6 +135,22 @@
   background: linear-gradient(90deg, rgba(255,209,0,.08), transparent 70%); }
 .crown { width: 46px; height: 46px; }
 
+.prize-pool { background: var(--ap-panel); border: 1px solid var(--ap-gold); border-radius: 6px; padding: 20px 22px; margin-bottom: 18px; display: grid; gap: 14px; }
+.prize-pool h3 { color: var(--ap-gold); }
+.prize-note { color: var(--ap-muted); font-size: .92rem; }
+.prize-grid { display: grid; gap: 8px; }
+.prize-row { display: grid; grid-template-columns: 70px minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 9px 12px; border-radius: 4px; background: var(--ap-panel-2); border: 1px solid var(--ap-line-soft); }
+.prize-row.top { border-color: var(--ap-gold); background: linear-gradient(90deg, rgba(255,209,0,.12), var(--ap-panel-2) 70%); }
+.prize-row .pr-rank { font: 800 1rem/1 var(--ap-f-display); color: var(--ap-gold); }
+.prize-row .pr-name { color: var(--ap-text); font-size: .92rem; min-width: 0; }
+.prize-row .pr-reward { font: 600 .9rem/1.3 var(--ap-f-mono); color: var(--ap-gold); text-align: right; white-space: nowrap; }
+.rung .prize-badge { display: inline-block; margin-top: 3px; font: 700 .68rem/1 var(--ap-f-body); color: #0e1115; background: var(--ap-gold); border-radius: 3px; padding: 2px 6px; }
+
+@media (max-width: 620px) {
+  .prize-row { grid-template-columns: minmax(0, 1fr); text-align: left; gap: 4px; }
+  .prize-row .pr-reward { text-align: left; }
+}
+
 /* ---------- Erfolgswege ---------- */
 .paths { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
 .path { background: var(--ap-panel); border: 1px solid var(--ap-line-soft); border-radius: 6px; padding: 20px; display: grid; gap: 14px; align-content: start; min-width: 0; }
